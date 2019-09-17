@@ -7,6 +7,12 @@ import About from './About';
 import Contact from './Contact';
 import './style.css';
 
+export const LoginContext = React.createContext();
+
+const userDetails = {
+  userName: "veera",
+  password: "veera"
+}
 class App extends Component {
   constructor() {
     super();
@@ -29,4 +35,7 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById('root'));
+render(
+  <LoginContext.Provider value = {userDetails}>
+    <App />
+  </LoginContext.Provider>, document.getElementById('root'));
