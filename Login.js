@@ -1,33 +1,32 @@
-import React, { useEffect, useState, useRef,useContext } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
-import ReactToPrint from 'react-to-print';
-import {LoginContext} from './index';
+import { LoginContext } from './index';
+import NavigationTabs from './NavigationTabs';
 
-const Login = ({handleLogin, history}) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+const Login = ({ handleLogin, history }) => {
+  const [authenticated, setAuthenticated] = useState(false);
   const [userName, setUSerName] = useState('');
   const [password, setPassword] = useState('');
   const loginRef = useRef();
   const userContext = useContext(LoginContext);
-  handleLogin = () => {
-    // if(userName === userContext.userName) {
-    //   setIsAuthenticated = true;
-    // }
-    history.push("./home")
+  handleLogin = (e) => {    
+    if(userContext.userName === userName) {
+      setAuthenticated(true)
+      history.push("./home");
+    }    
   }
-  useEffect( () =>{   
-    loginRef.current.focus(); 
-    //isAuthenticated ? history.push("/home") : history.push("/")    
+  useEffect(() => {
+    //loginRef.current.focus();     
   });
 
   return (
     <div>
-      <LoginSection>        
+      <LoginSection>
         <Input
           type="text"
-          placeholder='User Name'        
-          onChange={ (e) => setUSerName(e.target.value)}
+          placeholder='User Name'
+          onChange={(e) => setUSerName(userName = e.target.value)}
           ref={loginRef}
         />
         <Input
@@ -35,10 +34,10 @@ const Login = ({handleLogin, history}) => {
           placeholder='Password'
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button onClick={handleLogin}>Login</Button>
-      </LoginSection>      
+        <Button onClick={(e) => handleLogin(e)}>Login</Button>
+      </LoginSection>
     </div>
-    
+
   )
 }
 export default Login;
