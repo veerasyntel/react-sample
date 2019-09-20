@@ -1,7 +1,7 @@
 export const Routes = [
   {
     link: "Search Options",
-    path: "/home"
+    path: "/search-options"
   }, {
     link: "Customer Information",
     path: "/about"

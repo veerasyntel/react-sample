@@ -6,14 +6,17 @@ import Styled from 'styled-components';
 const NavigationTabs = (props) => {
   return (
     <>
-      {Routes.map(route => {
+      {Routes.map((route, index) => {
         return (
           <NavWrapper>
             <ul>
               <Link
+                index={index}
                 to={route.path}
+                className="navigationTabs_item"
+                activeClassName="navigationTabs_item--active"
               >
-                <li>{route.link}</li>
+                <li className="navigationTabs_link">{route.link}</li>
               </Link>
             </ul>
           </NavWrapper>
@@ -33,16 +36,25 @@ const NavWrapper = Styled.nav`
     display: inline-block;
     list-style-type: none;
     margin: 0;
-    padding: 0 1rem;
-    li {
+    padding: 0 1rem;    
+    .navigationTabs_item {
+
+      &--active {
+        .navigationTabs_link {
+          color: green;
+        }
+      }
+    }
+    .navigationTabs_link {
       display: inline-block;
       color: white;  
       font-weight: bold; 
       margin: 0
-      padding: 0 1.5em;      
+      padding: 0 1.5em;  
+      text-decoration: none;    
     }    
   } 
-  ul li:hover {
+  .navigationTabs_link:hover {
     color: red;    
   }
 

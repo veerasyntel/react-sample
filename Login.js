@@ -13,7 +13,7 @@ const Login = ({ handleLogin, history }) => {
   handleLogin = (e) => {    
     if(userContext.userName === userName) {
       setAuthenticated(true)
-      history.push("./home");
+      history.push("./search-options");
     }    
   }
   useEffect(() => {
