@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "16.8.0",
     "react-dom": "16.8.0",
     "react-router-dom": "5.0.1",
-    "react-to-print": "^2.3.0",
+    "react-to-print": "2.3.0",
     "styled-components": "4.3.2",
     "styled-tools": "1.7.1"
   },

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ifProp } from 'styled-tools';
 import { LoginContext } from './index';
 import NavigationTabs from './NavigationTabs';
+import CheckBoxContainer from './Components/CheckBox/CheckBoxContainer';
 
 const Login = ({ handleLogin, history }) => {
   const [authenticated, setAuthenticated] = useState(false);
@@ -36,6 +37,8 @@ const Login = ({ handleLogin, history }) => {
         />
         <Button onClick={(e) => handleLogin(e)}>Login</Button>
       </LoginSection>
+
+      <CheckBoxContainer />
     </div>
 
   )

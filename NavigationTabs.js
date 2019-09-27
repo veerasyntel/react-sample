@@ -15,8 +15,9 @@ const NavigationTabs = (props) => {
                 to={route.path}
                 className="navigationTabs_item"
                 activeClassName="navigationTabs_item--active"
+                key={index}
               >
-                <li className="navigationTabs_link">{route.link}</li>
+                <li className="navigationTabs_link" key={index}>{route.link}</li>
               </Link>
             </ul>
           </NavWrapper>
