@@ -40,15 +40,17 @@ const CheckBoxContainer = () => {
       <input
         type="checkbox"
         label="All"
-        isChecked={allChecked}
-        onChange={allCheckedHandle}
         name="All"
+        isChecked={allChecked}
+        onChange={allCheckedHandle}        
       /><label>All</label>
-      <CheckBox
-        label={"Misc"}
+      <input
+        type="checkbox"
+        label="Misc"
+        name="Misc"
         isChecked={miscChecked}
         onChange={miscCheckedHandle}
-      />
+      /><label>Misc</label>
       {checkBoxesData && checkBoxesData.map(checkbox => {
         return <CheckBox
           label={checkbox.name}

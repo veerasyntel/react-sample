@@ -13,7 +13,7 @@ const CheckBox = ({
         type="checkbox" 
         checked={isChecked}
         onChange={onChange}
-        name={label}
+        //name={label}
         id={label}
       />
       <label>{label}</label>
